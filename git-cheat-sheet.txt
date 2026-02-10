@@ -1,0 +1,6 @@
+git status
+git add .
+git commit -m "msg"
+git log --oneline
+git checkout -b branchname
+git merge branchname
