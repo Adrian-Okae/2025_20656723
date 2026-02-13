@@ -23,3 +23,9 @@ jobs:
         with:
           branch: gh-pages
           folder: Worksheet5/html
+      - name: Debug: list files
+        run: |
+          pwd
+          ls -la
+          ls -la Worksheet5 || true
+
