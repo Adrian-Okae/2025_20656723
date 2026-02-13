@@ -8,18 +8,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+  - name: Run doxygen
+  run: |
+    cd Worksheet5
+    doxygen
 
-      - name: Install doxygen
-        run: sudo apt-get update && sudo apt-get install -y doxygen
+- name: Deploy
+  uses: JamesIves/github-pages-deploy-action@v4
+  with:
+    branch: gh-pages
+    folder: Worksheet5/html
 
-      - name: Run Doxygen
-        working-directory: ${{ github.workspace }}/Worksheet5
-        run: doxygen
-
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: Worksheet5/html
