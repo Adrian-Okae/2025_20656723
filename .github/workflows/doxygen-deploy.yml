@@ -2,26 +2,25 @@ name: doxygen-deploy
 
 on:
   push:
-    branches: [ master ]   # change to main if your default branch is main
-
+    branches: [ master ]   
 jobs:
   deploy-worksheet5:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+  - name: Checkout repository
+    uses: actions/checkout@v4
 
-      - name: Install Doxygen
-        run: sudo apt-get update && sudo apt-get install -y doxygen
+  - name: Install Doxygen
+    run: sudo apt-get update && sudo apt-get install -y doxygen
 
-      - name: Generate documentation
-        run: |
-          cd Worksheet5
-          doxygen
+  - name: Generate documentation
+    run: |
+    cd Worksheet5
+    doxygen
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: Worksheet5/html
+  - name: Deploy to GitHub Pages
+    uses: JamesIves/github-pages-deploy-action@v4
+    with:
+    branch: gh-pages
+    folder: Worksheet5/html
