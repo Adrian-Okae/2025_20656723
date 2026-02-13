@@ -1,0 +1,32 @@
+\doxysection{adder.\+h}
+\hypertarget{adder_8h_source}{}\label{adder_8h_source}\doxymbox{\hyperlink{adder_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ ADDER\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ ADDER\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ If\ building\ a\ static\ library,\ don't\ use\ dllimport/dllexport}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifdef\ mathsSTATIC}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ MATHSLIBAPI}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00020\ \ \ \textcolor{comment}{//\ Building/using\ a\ DLL}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifdef\ mathsEXPORTS}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ MATHSLIBAPI\ \_\_declspec(dllexport)}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ MATHSLIBAPI\ \_\_declspec(dllimport)}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ Non-\/Windows:\ nothing\ special\ needed}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ MATHSLIBAPI}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \doxymbox{\hyperlink{adder_8h_aa422ad6665e0e383bf3ace08c2f6c803}{MATHSLIBAPI}}\ \textcolor{keywordtype}{int}\ add(\textcolor{keywordtype}{int}\ a,\ \textcolor{keywordtype}{int}\ b);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ADDER\_H}}
+
+\end{DoxyCode}
